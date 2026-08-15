@@ -1,32 +1,45 @@
-# React + TypeScript + Vite
+# Vibe Todo List - Frontend ⚛️
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+이 디렉터리는 Vibe Todo List 애플리케이션의 사용자 인터페이스(UI)를 포함하고 있습니다. **React.js, TypeScript, Vite**를 기반으로 구축되었습니다.
 
-Currently, two official plugins are available:
+## 🛠️ 기술 스택
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **프레임워크**: React.js
+- **언어**: TypeScript
+- **빌드 툴**: Vite
+- **패키지 관리자**: `npm`
+- **스타일링**: Vanilla CSS
+- **API 통신**: `axios`
 
-## React Compiler
+## 🚀 실행 방법
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+### 1. 패키지 설치
+```bash
+npm install
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### 2. 개발 서버 실행
+```bash
+npm run dev
+```
+개발 서버가 실행되면 브라우저에서 `http://localhost:5173`으로 접속할 수 있습니다.
+
+## 🎨 스타일링 및 UI 컨벤션
+
+이 프로젝트는 TailwindCSS나 외부 UI 라이브러리를 사용하지 않고, **오직 순수 CSS(Vanilla CSS)**만으로 스타일링을 진행합니다 (`src/index.css`).
+
+- **디자인 철학 (Vibe)**: 단순한 UI를 넘어, 부드러운 그라데이션, 글래스모피즘(Glassmorphism), 마이크로 애니메이션, 호버 이펙트 등을 활용하여 **현대적이고 아름다운(Premium) 사용자 경험**을 제공해야 합니다.
+
+## 📝 주요 코딩 컨벤션
+
+- **API 통신**: 모든 백엔드 통신 로직은 `src/api/todoApi.ts`에 중앙 집중화되어 있습니다.
+- **TypeScript Import**: Vite(esbuild) 컴파일 오류를 방지하기 위해 타입(Type/Interface)을 불러올 때는 반드시 `import type { ... }` 문법을 사용해야 합니다.
+
+## 🧪 타입 검사 및 빌드
+
+코드를 수정하거나 파일 위치를 변경한 후에는 TypeScript 에러가 없는지 반드시 확인해야 합니다.
+```bash
+npm run build
+# 또는
+npx tsc
+```
